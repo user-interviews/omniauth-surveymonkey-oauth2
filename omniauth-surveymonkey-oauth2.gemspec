@@ -1,14 +1,14 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path('../lib', __FILE__)
-require 'lib/omniauth/survey_monkey/version'
+require 'omniauth/survey_monkey/version'
 
 Gem::Specification.new do |s|
-  s.name     = 'omniauth-surveymonkey2'
+  s.name     = 'omniauth-surveymonkey-oauth2'
   s.version  = OmniAuth::SurveyMonkey::VERSION
   s.authors  = ['Michael Berkovich']
   s.email    = ['theiceberk@gmail.com']
   s.summary  = 'SurveyMonkey strategy for OmniAuth'
-  s.homepage = 'https://github.com/berk/omniauth-surveymonkey'
+  s.homepage = 'https://github.com/berk/omniauth-surveymonkey-oauth2'
   s.description = 'SurveyMonkey strategy for SSO using OmniAuth framework'
 
   s.files         = `git ls-files`.split("\n")

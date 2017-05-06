@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'omniauth-burner'
+require 'omniauth-surveymonkey-oauth2'
 
-describe OmniAuth::Strategies::Burner do
+describe OmniAuth::Strategies::SurveyMonkey do
   before :each do
     @request = double('Request')
     @request.stub(:params) { {} }
@@ -13,7 +13,7 @@ describe OmniAuth::Strategies::Burner do
   
   subject do
     args = [@client_id, @client_secret, @options].compact
-    OmniAuth::Strategies::Burner.new(nil, *args).tap do |strategy|
+    OmniAuth::Strategies::SurveyMonkey.new(nil, *args).tap do |strategy|
       strategy.stub(:request) { @request }
     end
   end
@@ -22,15 +22,15 @@ describe OmniAuth::Strategies::Burner do
 
   describe '#client' do
     it 'has correct site' do
-      subject.client.site.should eq('https://app.burnerapp.com')
+      subject.client.site.should eq('https://api.surveymonkey.net')
     end
 
     it 'has correct authorize url' do
-      subject.client.options[:authorize_url].should eq('https://app.burnerapp.com/oauth/authorize')
+      subject.client.options[:authorize_url].should eq('/oauth/authorize')
     end
 
     it 'has correct token url' do
-      subject.client.options[:token_url].should eq('https://api.burnerapp.com/oauth/access')
+      subject.client.options[:token_url].should eq('/oauth/token')
     end
   end
 
@@ -46,7 +46,7 @@ describe OmniAuth::Strategies::Burner do
   
   describe '#info' do
     before :each do
-      @raw_info ||= { 'name' => 'Alex' }
+      @raw_info ||= { 'username' => 'Alex' }
       subject.stub(:raw_info) { @raw_info }
     end
     
@@ -58,7 +58,7 @@ describe OmniAuth::Strategies::Burner do
     
     context 'when data is present in raw info' do
       it 'returns first name' do
-        subject.info['name'].should eq('Alex')
+        subject.info['username'].should eq('Alex')
       end
     end
   end

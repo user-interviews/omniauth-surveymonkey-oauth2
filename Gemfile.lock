@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-surveymonkey2 (1.0.1)
+    omniauth-surveymonkey-oauth2 (1.0.1)
       omniauth-oauth2 (~> 1.1)
 
 GEM
@@ -71,7 +71,7 @@ DEPENDENCIES
   jruby-openssl
   memcache_mock
   mock_redis
-  omniauth-surveymonkey2!
+  omniauth-surveymonkey-oauth2!
   rake (~> 10.4)
   rdoc (~> 4.2)
   rspec (~> 3.1)

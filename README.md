@@ -36,27 +36,45 @@ end
 Here's an example *Authentication Hash* available in `request.env['omniauth.auth']`:
 
 ```ruby
-
-{"provider"=>"burner",
- "uid"=>nil,
- "info"=> {
-    "id" => "123",
-    "username" => "test-user",
-    "first_name" => "John",
-    "last_name" => "Doe",
-    "language" => "en",
-    "email" => "test@surveymonkey.com",
-    "account_type" => "enterprise_platinum",
-    "date_created" => "2015-10-06T12:56:55+00:00",
-    "date_last_login" => "2015-10-06T12:560000:55+00:00"
- },
- "credentials"=> {
-    "token"=> "dfkjadlfkjasdkjflaskdjfjsldflasjdflkasdjflaskdjf",
-    "expires_at"=>1489053154,
-    "expires"=>true
- },
- "extra"=>{}}
- 
+{"provider"=>"surveymonkey",
+ "uid"=>"23421341234",
+ "info"=>
+  {"username"=>"userx",
+   "account_type"=>"basic",
+   "email"=>"user@domain.com",
+   "id"=>"234123"},
+ "credentials"=>
+  {"token"=>
+    "hBD-ASxyjkbtY-a89sdf9a78sd9f87as9d87fa98s7df9a78sdf987asd.J8OeyCHPcRx4y1R.Q.f2O5rmpBpgxl28hxkImYihxZvKGsdZh",
+   "expires"=>false},
+ "extra"=>
+  {"username"=>"userx",
+   "scopes"=>
+    {"available"=>
+      ["users_read",
+       "surveys_read",
+       "collectors_read",
+       "collectors_write",
+       "contacts_read",
+       "contacts_write",
+       "responses_read",
+       "webhooks_read",
+       "webhooks_write",
+       "library_read"],
+     "granted"=>
+      ["surveys_read",
+       "collectors_read",
+       "collectors_write",
+       "contacts_read",
+       "contacts_write",
+       "users_read"]},
+   "account_type"=>"basic",
+   "language"=>"en",
+   "email"=>"user@domain.com",
+   "href"=>"https://api.surveymonkey.net/v3/users/me",
+   "date_last_login"=>"2017-05-06T15:10:37.837000+00:00",
+   "date_created"=>"2016-07-23T00:02:00+00:00",
+   "id"=>"23421341234"}} 
 ```
 
 The precise information available may depend on the permissions which you request.

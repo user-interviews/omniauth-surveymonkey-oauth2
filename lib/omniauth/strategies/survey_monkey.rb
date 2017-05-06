@@ -33,28 +33,36 @@ module OmniAuth
 
       option :name, 'surveymonkey'
 
+      option :access_token_options, {
+          :header_format => 'Bearer %s',
+          :param_name => 'access_token'
+      }
+
       option :authorize_options, [:scope]
 
       uid { raw_info['id'] }
 
       info do
+        prune!(
+            'username' => raw_info['username'],
+            'account_type' => raw_info['account_type'],
+            'email' => raw_info['email'],
+            'id' => raw_info['id']
+        )
+      end
+
+      extra do
         prune!(raw_info)
       end
 
-      # {
-      #     "id": "123",
-      #     "username": "test-user",
-      #     "first_name": "John",
-      #     "last_name": "Doe",
-      #     "language": "en",
-      #     "email": "test@surveymonkey.com",
-      #     "account_type": "enterprise_platinum",
-      #     "date_created": "2015-10-06T12:56:55+00:00",
-      #     "date_last_login": "2015-10-06T12:560000:55+00:00"
-      # }
-      #
       def raw_info
-        @raw_info ||= access_token.get('/v3/users/me').parsed['data']
+        @raw_info ||= access_token.get('/v3/users/me').parsed
+      end
+
+      def authorize_params
+        super.tap do |params|
+          params.merge!(:state => request.params['state']) if request.params['state']
+        end
       end
 
       private
