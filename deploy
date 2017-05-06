@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-gem_name = 'omniauth-surveymonkey2'
+gem_name = 'omniauth-surveymonkey-oauth2'
 
 def execute(cmd)
   puts "\n***************************************************************************\n"
@@ -35,7 +35,7 @@ def increment_version
   @version = nil
 end
 
-puts "\nBuilding omniauth-surveymonkey2-#{version}.gem..."
+puts "\nBuilding omniauth-surveymonkey-oauth2-#{version}.gem..."
 
 if ARGV.include?('release')
   execute('git checkout master')
