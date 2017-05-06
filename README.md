@@ -1,7 +1,7 @@
-# OmniAuth for Burner
-[![Build Status](https://travis-ci.org/berk/omniauth-surveymonkey2.png?branch=master)](https://travis-ci.org/berk/omniauth-surveymonkey2)
-[![Coverage Status](https://coveralls.io/repos/berk/omniauth-surveymonkey2/badge.png?branch=master)](https://coveralls.io/r/berk/omniauth-surveymonkey2?branch=master)
-[![Gem Version](https://badge.fury.io/rb/omniauth-surveymonkey2.svg)](http://badge.fury.io/rb/omniauth-surveymonkey2)
+# OmniAuth for SurveyMonkey
+[![Build Status](https://travis-ci.org/berk/omniauth-surveymonkey-oauth2.png?branch=master)](https://travis-ci.org/berk/omniauth-surveymonkey-oauth2)
+[![Coverage Status](https://coveralls.io/repos/berk/omniauth-surveymonkey-oauth2/badge.png?branch=master)](https://coveralls.io/r/berk/omniauth-surveymonkey-oauth2?branch=master)
+[![Gem Version](https://badge.fury.io/rb/omniauth-surveymonkey-oauth2.svg)](http://badge.fury.io/rb/omniauth-surveymonkey-oauth2)
 
 SurveyMonkey OAuth2 Strategy for OmniAuth 1.0.
 
@@ -14,7 +14,7 @@ https://developer.surveymonkey.com/api/v3/#authentication
 Add to your `Gemfile`:
 
 ```ruby
-gem 'omniauth-surveymonkey2'
+gem 'omniauth-surveymonkey-oauth2'
 ```
 
 Then `bundle install`.
