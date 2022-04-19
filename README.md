@@ -11,10 +11,10 @@ https://developer.surveymonkey.com/api/v3/#authentication
 
 ## Installing
 
-Add to your `Gemfile`:
+This repo is just a fork of the original that fixes a bug and is not the same as the version on rubygems. In order to use this one add the following to your `Gemfile`:
 
 ```ruby
-gem 'omniauth-surveymonkey-oauth2'
+gem 'omniauth-surveymonkey-oauth2', git: "https://github.com/user-interviews/omniauth-surveymonkey-oauth2"
 ```
 
 Then `bundle install`.
