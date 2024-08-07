@@ -28,7 +28,8 @@ module OmniAuth
       option :client_options, {
         :site           => 'https://api.surveymonkey.net',
         :authorize_url  => '/oauth/authorize',
-        :token_url      => '/oauth/token'
+        :token_url      => '/oauth/token',
+        :auth_scheme => 'request_body'
       }
 
       option :name, 'surveymonkey'
